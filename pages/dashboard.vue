@@ -31,8 +31,14 @@ const saveCourse = () => {
   setData('courses', JSON.stringify(courses))
   console.log(courses);
 };
-const deleteCoures = () => {
 
+const deleteCoures = index => {
+  
+  const courses = JSON.parse(getData("courses")) || [];
+
+   const Othercourses = courses.filter((course, i) => i !== index)
+  
+  setData("courses", JSON.stringify(Othercourses));
 }
 
 
@@ -42,7 +48,7 @@ const deleteCoures = () => {
 
     <div class="w-[80%] mx-auto pt-20 ">
       <div class="text-right">
-        <button class="bg-red-600 py-2 px-4 rounded-md text-white " @click="isopen = true">Create course</button>
+        <button class="bg-green-600 py-2 px-4 rounded-md text-white " @click="isopen = true">Create course</button>
       </div>
       <div>
         <h1>My Courses</h1>
@@ -54,11 +60,12 @@ const deleteCoures = () => {
               <img class="rounded-t-lg" :src="course.image " alt="" />
             </a>
             <div class="p-5">
-              <a href="#">
+              <button >
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ course.title }}</h5>
-              </a>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ course.content }}</p>
+              </button>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">{{ course.content }}</p>
               <a href="#"
+              @click="deleteCoures(index)"
                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                 Delete
                 

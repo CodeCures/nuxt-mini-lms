@@ -1,12 +1,14 @@
 <script setup>
 import { reactive, ref } from 'vue';
+import { getData, setData } from 'nuxt-storage/local-storage'
 
 
 const isOpen = ref(false)
-const openCard = (id) => {
-  console.log(id);
+const openCard = (index) => {
+  console.log(index);
   
 }
+const courses = JSON.parse(getData("courses")) || [];
 const articles = reactive([
   {
     id: "1",
@@ -49,10 +51,10 @@ const articles = reactive([
 
     <div class="grid grid-cols-8 ">
       <div class="col-span-6 space-y-14 pt-10">
-        <div v-for="article in articles" :key="article.id" class="  p-5 space-y-8">
-          <h1 class="font-semibold text-3xl text-blue-800"> {{ article.title }}</h1>
+        <div v-for="(course, index) in courses" :key="index" class="  p-5 space-y-8">
+          <h1 class="font-semibold text-3xl text-blue-800"> {{ course.title }}</h1>
           <div class="h-96 overflow-hidden object-cover rounded-tr-[3.5rem]">
-            <img :src="article.image" alt="article image" class="w-full ">
+            <img :src="course.image" alt="article image" class="w-full ">
 
           </div>
           <div class=" border-[8px] p-5 font-sans rounded-br-[3.5rem] shadow-inner ">
@@ -74,9 +76,9 @@ const articles = reactive([
           <div class=""  >
             <div class="border-4 p-2 flex justify-between">
               <h1 class="" >Task </h1>
-              <button @click="openCard(article.id)">open</button>
+              <button @click="openCard(index)">open</button>
             </div>
-            <div v-show="isOpen" :id="article.id"  class="duration-700 translate-y-2 transition" style="display: none;">
+            <div v-show="isOpen"   class="duration-700 translate-y-2 transition" style="display: none;">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit beatae possimus nemo doloribus culpa laudantium reiciendis expedita aliquam omnis temporibus, accusantium officiis cum architecto unde quas. Assumenda, rem laudantium.
             </div>
           </div>
