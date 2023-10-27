@@ -6,9 +6,10 @@ import { getData, setData } from 'nuxt-storage/local-storage'
 const isOpen = ref(false)
 const openCard = (index) => {
   console.log(index);
-  
+
 }
 const courses = JSON.parse(getData("courses")) || [];
+const questions = JSON.parse(getData("questions")) || [];
 const articles = reactive([
   {
     id: "1",
@@ -37,6 +38,18 @@ const articles = reactive([
     ]
   },
 ])
+const test = (index) => {
+  let q ='';
+
+  q = questions.filter(question => question.article_id === index);
+  console.log(q);
+}
+// let text = '';
+//  for (let x in questions) {
+//     text += x;
+//     test(1);
+//     // console.log(questions[x]);
+//   }
 
 
 
@@ -58,28 +71,17 @@ const articles = reactive([
 
           </div>
           <div class=" border-[8px] p-5 font-sans rounded-br-[3.5rem] shadow-inner ">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid dolor adipisci consectetur repellat ex hic
-            at commodi architecto possimus aut natus nobis, distinctio ut quidem libero cum necessitatibus eaque et cumque
-            eveniet voluptatibus iste consequatur perferendis! Soluta laboriosam eius nostrum quaerat optio modi iste
-            culpa assumenda eveniet facilis aut eum beatae a, accusantium voluptatibus quam dolorum inventore porro
-            molestias sequi et, distinctio eligendi nemo! Nam nostrum tempora quas necessitatibus, eius perspiciatis iste.
-            Fugiat laborum fuga nisi ullam. Nulla hic consequatur illum soluta unde voluptate enim temporibus veniam
-            voluptas aut placeat magnam magni eligendi recusandae quae velit veritatis quam incidunt repudiandae modi
-            sapiente, doloribus debitis assumenda quia! Dolore explicabo hic quas? Quas esse enim quis ad autem magni
-            voluptate recusandae. Voluptatem libero commodi fugiat, ad cumque suscipit asperiores quaerat quas ab delectus
-            aperiam ducimus ea, eos fuga blanditiis rerum! Libero perferendis commodi, magni architecto laudantium optio
-            blanditiis ipsum deserunt fuga officia modi quibusdam esse assumenda hic quidem incidunt distinctio.
-            Necessitatibus quibusdam corporis nulla mollitia, id unde ullam odio minus sed eligendi voluptate inventore
-            iusto voluptas totam qui eum. Totam aut eius quidem, fuga qui praesentium explicabo ea. Ex corrupti, esse
-            minus debitis eaque fuga quos nesciunt. Vero cumque libero quae facere.
+            {{ course.description }}
           </div>
-          <div class=""  >
+          <div class="">
             <div class="border-4 p-2 flex justify-between">
-              <h1 class="" >Task </h1>
-              <button @click="openCard(index)">open</button>
+              <h1 class="">Task </h1>
+              <button @click="openCard(index), test(index)">open</button>
             </div>
-            <div v-show="isOpen"   class="duration-700 translate-y-2 transition" style="display: none;">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit beatae possimus nemo doloribus culpa laudantium reiciendis expedita aliquam omnis temporibus, accusantium officiis cum architecto unde quas. Assumenda, rem laudantium.
+            <div class="duration-700 translate-y-2 transition">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reprehenderit beatae possimus nemo doloribus
+              culpa laudantium reiciendis expedita aliquam omnis temporibus, accusantium officiis cum architecto unde
+              quas. Assumenda, rem laudantium.
             </div>
           </div>
         </div>
