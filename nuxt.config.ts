@@ -2,15 +2,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  modules: ['@sidebase/nuxt-auth'],
+  // modules: ['@sidebase/nuxt-auth'],
+  modules: ['@sidebase/nuxt-session'],
   // router: {
   //   middleware: ['auth']
   // },
 
-  auth: {
-    // origin: process.env.ORIGIN,
-    enableGlobalAppMiddleware: true
-},
+
 
   postcss: {
     plugins: {
