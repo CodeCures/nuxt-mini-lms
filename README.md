@@ -2,6 +2,8 @@
 
 This is a minimized learning management system basically for demo purposes, it uses localStorage as a data source and ``` "@hebilicious/authjs-nuxt" ``` for authentication
 
+![dashboard image](https://i.ibb.co/0KG2vjd/Screenshot-2023-11-01-at-06-23-15.png)
+
 ## Setup
 
 Make sure to install the dependencies:
@@ -22,7 +24,8 @@ bun install
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+Start the development server on `http://localhost:3000` <br>
+Visit `http://localhost:3000/login` to login password is `pass123`
 
 ```bash
 # npm
