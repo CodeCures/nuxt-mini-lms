@@ -1,21 +1,23 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from "node:path"
+
 export default defineNuxtConfig({
+  alias: {
+    cookie: resolve(__dirname, "node_modules/cookie")
+  },
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  // modules: ['@sidebase/nuxt-auth'],
-  modules: ['@sidebase/nuxt-session'],
-  // router: {
-  //   middleware: ['auth']
-  // },
-
-
-
+  modules: ["@hebilicious/authjs-nuxt", '@vueuse/nuxt'],
+  authJs: {
+    verifyClientOnEveryRequest: true,
+    guestRedirectTo: "/", // where to redirect if the user is not authenticated
+    authenticatedRedirectTo: "/dashboard", // where to redirect if the user is authenticated
+    baseUrl: "http://localhost:3000" // should be something like https://www.my-app.com
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-  
 
 });

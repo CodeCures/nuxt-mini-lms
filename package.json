@@ -11,8 +11,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@sidebase/nuxt-auth": "^0.6.0-rc.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/uuid": "^9.0.6",
+    "@vueuse/core": "^10.5.0",
+    "@vueuse/nuxt": "^10.5.0",
     "autoprefixer": "^10.4.16",
+    "daisyui": "^3.9.4",
     "nuxt": "^3.8.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
@@ -20,8 +24,10 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@sidebase/nuxt-session": "^0.2.7",
-    "alpinejs": "^3.13.2",
-    "nuxt-storage": "^1.2.2"
+    "@auth/core": "^0.17.0",
+    "@headlessui/vue": "^1.7.16",
+    "@hebilicious/authjs-nuxt": "^0.3.5",
+    "@heroicons/vue": "^2.0.18",
+    "uuid": "^9.0.1"
   }
 }
