@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Mini LMS
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a minimized learning management system basically for demo purposes, it uses localStorage as a data source and ``` "@hebilicious/authjs-nuxt" ``` for authentication
 
 ## Setup
 
