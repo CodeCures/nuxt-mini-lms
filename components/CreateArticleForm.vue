@@ -27,7 +27,7 @@ function submit() {
 
 <template>
     <dialog id="my_modal_4" class="modal">
-        <div class="modal-box w-3/5">
+        <div class="modal-box w-3/5 bg-gray-700">
             <h3 class="font-bold text-lg">Hello!</h3>
             <p class="py-4">Click the button at the bottom-left corner to close</p>
             <div class="modal-action">

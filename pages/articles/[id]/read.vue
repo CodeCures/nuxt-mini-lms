@@ -110,7 +110,7 @@ function reset() {
     </div>
 
     <dialog id="my_modal_3" class="modal">
-        <div class="modal-box">
+        <div class="modal-box bg-gray-800">
             <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>

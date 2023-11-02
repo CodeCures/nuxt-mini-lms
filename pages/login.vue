@@ -36,7 +36,7 @@ async function login() {
                 <label for="password" class="input-label">Password</label>
                 <div class="mt-2">
                     <input id="password" name="password" type="password" v-model="credentials.password"
-                        autocomplete="current-password" class="form-control bg-gray-200" placeholder="****">
+                        autocomplete="current-password" class="form-control bg-gray-200 text-gray-700" placeholder="****">
                 </div>
             </div>
             <div>

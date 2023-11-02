@@ -65,7 +65,7 @@ function storeQuestion() {
         <!-- You can open the modal using ID.showModal() method -->
 
         <dialog id="my_modal_3" class="modal">
-            <div class="modal-box">
+            <div class="modal-box bg-gray-800">
                 <form>
                     <button type="button" onclick="my_modal_3.close()"
                         class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
